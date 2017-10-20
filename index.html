@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    ul.tab{
+        width: 1000px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 16px;
+        color: #0d0d0d;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    ul.tab>li{
+        width: 20%;
+        border-right: 1px solid #fff;
+        position: relative;
+        background: skyblue;
+    }
+    ul.item{
+        width: 100%;
+        height: auto;
+        position: absolute;
+        display: none;
+        top:40px;
+        left:0px;
+
+    }
+    ul.item>li{
+        width: 100%;
+        height:40px;
+        font-size: 14px;
+        color: #fff;
+        background: #fff3e6;
+        text-align: center;
+        line-height: 40px;
+        border-bottom: 1px solid #fff;
+    }
+</style>
+<body>
+<ul class="tab">
+    <li>
+        新闻
+        <ul class="item">
+            <li>国际新闻</li>
+            <li>国际新闻</li>
+            <li>国际新闻</li>
+            <li>国际新闻</li>
+            <li>国际新闻</li>
+
+        </ul>
+    </li>
+    <li>
+        娱乐
+        <ul class="item">
+            <li>扫雷</li>
+            <li>扫雷</li>
+            <li>扫雷</li>
+            <li>扫雷</li>
+            <li>扫雷</li>
+
+        </ul>
+    </li>
+    <li>
+        军事
+        <ul class="item">
+            <li>国际军事</li>
+            <li>国际军事</li>
+            <li>国际军事</li>
+            <li>国际军事</li>
+            <li>国际军事</li>
+
+        </ul>
+    </li>
+    <li>
+        游戏
+        <ul class="item">
+            <li>绝版</li>
+            <li>绝版</li>
+            <li>绝版</li>
+            <li>绝版</li>
+            <li>绝版</li>
+
+        </ul>
+    </li>
+    <li>
+        个人
+        <ul class="item">
+            <li>个人中心</li>
+            <li>个人中心</li>
+            <li>个人中心</li>
+            <li>个人中心</li>
+            <li>个人中心</li>
+
+        </ul>
+    </li>
+</ul>
+</body>
+<script>
+    $(function () {
+        let tab=$('ul.tab>li')
+        console.log(tab);
+        tab.on('mouseenter mouseleave',function () {
+//            $(this).children('.item');
+//            let index=$(this).index();
+//            $('.item',this)
+            $(this).find('.item').stop();   //动画前停止当前动画
+            $(this).find('.item').slideToggle();
+        })
+    })
+</script>
+</html>
